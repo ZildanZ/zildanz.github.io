@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <style>
+        /* Reset Dasar */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #202124;
+        }
+
+        /* Container Utama */
+        .login-container {
+            width: 100%;
+            max-width: 370px;
+            padding: 48px 40px 36px;
+            text-align: center;
+            /* border: 1px solid #dadce0; */ /* Opsional: bisa ditambah kotak putih */
+            border-radius: 8px;
+        }
+
+        /* Logo Gmail (Menggunakan Font Teks Stylized karena gambar asli adalah SVG) */
+        .logo {
+            font-size: 22px;
+            color: #5f6368;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Product Sans', arial, sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Membuat Logo Gmail sederhana menggunakan CSS/SVG */
+        .gmail-icon {
+            width: 40px; 
+            height: 40px; 
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Judul & Sub Judul */
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 24px;
+        }
+
+        /* Form Input */
+        .input-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #5f6368;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            height: 44px;
+            padding: 0 16px;
+            font-size: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            background: #fff;
+            box-sizing: border-box; /* Agar padding tidak menambah lebar */
+            outline: none;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            border: 1px solid #1a73e8;
+            border-width: 2px;
+            box-shadow: 0 0 0 1px #1a73e8; /* Efek biru tipis di luar */
+            border-radius: 3px; /* Sedikit sedikit mengubah radius saat focus */
+        }
+
+        /* Link Bawah Input */
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .forgot-link a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tombol (Button) */
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .btn-next {
+            background-color: #1a73e8;
+            color: white;
+            border: 1px solid transparent;
+            padding: 0 24px;
+            height: 36px;
+            min-width: 88px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-next:hover {
+            background-color: #2b7de0;
+            box-shadow: 0 1px 3px rgba(60,64,67,0.3);
+        }
+
+        /* Tombol Buat Akun (Secondary) */
+        .btn-create-account {
+            background: transparent;
+            border: none;
+            color: #1a73e8;
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: left;
+        }
+        
+        .btn-create-account:hover {
+            background: rgba(66,133,244,0.04);
+        }
+
+        /* Footer Bahasa */
+        .language-footer {
+            margin-top: 24px; /* Posisikan di bawah sendiri */
+            text-align: left;
+        }
+        
+        select {
+            border: none;
+            background: transparent;
+            font-size: 13px;
+            color: #5f6368;
+            cursor: pointer;
+            padding: 4px;
+        }
+        
+        select:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Informasi */
+        .info-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f2f2f2;
+            padding: 15px 27px;
+            box-sizing: border-box;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            color: #5f6368;
+        }
+        
+        .info-footer a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .info-footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Struktur Login -->
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" class="gmail-icon">
+        
+        <h1>Sign in</h1>
+        <div class="subtitle">Use your Google Account</div>
+
+        <!-- Form -->
+        <form action="#" method="POST">
+            <div class="input-group">
+                <div style="margin-bottom: 15px;">
+                    <input type="text" placeholder="Email or phone" aria-label="Email or phone">
+                </div>
+                
+                <!-- Jika halaman login kedua (Password) -->
+                <!-- 
+                <div>
+                    <input type="password" placeholder="Enter your password" aria-label="Password">
+                </div> 
+                -->
+            </div>
+
+            <!-- Linkhelper (Atas) -->
+            <div class="forgot-link" style="text-align: left; margin-bottom: 24px;">
+                <a href="#">Forgot email?</a>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="btn-container">
+                <button type="button" class="btn-create-account">Create account</button>
+                <button type="submit" class="btn-next">Next</button>
+            </div>
+        </form>
+
+        <!-- Pilihan Bahasa (Opsional di dalam kotak) -->
+        <div class="language-footer">
+            <select>
+                <option>English (United States)</option>
+                <option>Bahasa Indonesia</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Footer Bawah Halaman -->
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: #f2f2f2; padding: 15px 27px; box-sizing: border-box; font-size: 13px; display: flex; justify-content: space-between; color: #5f6368;">
+        <div style="display: flex;">
+            <a href="#" style="margin-right: 20px; color: #5f6368; text-decoration: none;">Help</a>
+            <a href="#" style="margin-right: 20px; color: #5f6368; text-decoration: none;">Privacy</a>
+            <a href="#" style="color: #5f6368; text-decoration: none;">Terms</a>
+        </div>
+    </div>
+
+</body>
+</html>
