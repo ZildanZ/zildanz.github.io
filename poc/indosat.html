@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temuan IDOR Pada Layanan Indosat | Zildan Security</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="article-layout">
+    <header class="article-header">
+      <h1>Temuan IDOR Pada Layanan Indosat</h1>
+      <p class="article-byline">Zildan Security • May 19, 2026</p>
+      <span class="chip">BUG-BOUNTY</span>
+    </header>
+
+    <article class="article-content">
+      <p>Writeup ini mendeskripsikan skenario IDOR (Insecure Direct Object Reference) pada alur request yang menggunakan identifier sebagai acuan data transaksi.</p>
+
+      <h2>Ringkasan Temuan</h2>
+      <p>Endpoint menerima perubahan identifier tanpa melakukan verifikasi kepemilikan object secara ketat. Akibatnya, user berpotensi melihat resource milik user lain.</p>
+
+      <h2>Step To Reproduce</h2>
+      <ol>
+        <li>Autentikasi sebagai user biasa.</li>
+        <li>Capture request saat membuka detail data tertentu.</li>
+        <li>Modifikasi nilai ID ke milik user lain.</li>
+        <li>Observasi response yang menampilkan data di luar hak akses.</li>
+      </ol>
+
+      <h2>Dampak</h2>
+      <p>Kebocoran data antar akun, berpotensi meningkatkan risiko penyalahgunaan informasi maupun eskalasi serangan lanjutan.</p>
+
+      <h2>Rekomendasi</h2>
+      <ul>
+        <li>Gunakan server-side object ownership validation sebelum query data.</li>
+        <li>Hindari identifier yang dapat ditebak, gunakan random UUID.</li>
+        <li>Tambahkan negative test untuk skenario lintas akun pada QA security test.</li>
+      </ul>
+
+      <a class="back-link" href="../index.html#pentest">? Kembali ke daftar PoC</a>
+    </article>
+  </main>
+</body>
+</html>

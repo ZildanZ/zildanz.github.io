@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Disclosure pada AWS AKULAKU | Zildan Security</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="article-layout">
+    <header class="article-header">
+      <h1>Information Disclosure pada AWS AKULAKU</h1>
+      <p class="article-byline">Zildan Security • Rab, 7 Jun 2023, 01.36</p>
+      <span class="chip">BUG-BOUNTY</span>
+    </header>
+
+    <article class="article-content">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIk5LLmM7H3H7M7sCjqzyuHkgCTCMgrvX_dPpqfNEwKX1xzTASry_NjIddHUQOiwmSfQ-UYLMvzh4mplNkjZdu4xKBsLyzUhZhPmWSDmfiGMpQ5904SNWk8taobXaxTYehFkbqAW8QGE_9z46Ug6OZht0kOGI1USVksM97AIqvazZRiiPgXqx_9k-U/s16000/Information%20Disclosure.png" alt="Information Disclosure Akulaku" />
+
+      <p>Dalam era digital yang semakin maju, perlindungan data dan keamanan informasi menjadi prioritas utama bagi perusahaan dan pengguna internet. Namun, terkadang celah keamanan masih dapat ditemukan di beberapa situs web. Salah satu jenis kerentanan yang umum ditemui adalah information disclosure atau pengungkapan informasi yang tidak seharusnya. Artikel ini mengulas contoh information disclosure pada layanan AWS (Amazon Web Services) yang terjadi di <a href="https://bimg.akulaku.net/goods/" target="_blank" rel="noopener noreferrer">https://bimg.akulaku.net/goods/</a>. Secara khusus, kasus ini membahas file logo toko, ID merchant, dan tanggal terakhir logo diubah yang dapat terungkap.</p>
+
+      <h2>Information Disclosure pada AWS AKULAKU: Keamanan Logo Toko, ID Merchant, dan Pembaruan Terakhir</h2>
+      <p>AWS, sebagai salah satu penyedia layanan cloud terkemuka, menawarkan infrastruktur yang aman dan andal bagi berbagai jenis aplikasi dan website. Namun, keamanan sebuah situs web tidak hanya bergantung pada infrastruktur cloud yang digunakan, tetapi juga pada bagaimana aplikasi yang berjalan di atasnya dikonfigurasi dan dijalankan. Dalam kasus <a href="https://bimg.akulaku.net/goods/" target="_blank" rel="noopener noreferrer">https://bimg.akulaku.net/goods/</a>, information disclosure terjadi dan memungkinkan akses ke file logo toko, ID merchant, dan tanggal terakhir logo diubah oleh pihak yang tidak berwenang.</p>
+
+      <h2>Pengertian Information Disclosure</h2>
+      <p>Information disclosure adalah kerentanan keamanan di mana informasi sensitif atau rahasia dapat diakses atau ditemukan oleh pihak yang tidak berwenang. Dalam kasus ini, information disclosure terjadi pada <a href="https://bimg.akulaku.net/goods/" target="_blank" rel="noopener noreferrer">https://bimg.akulaku.net/goods/</a>, yang mengizinkan akses ke file logo toko, ID merchant, dan tanggal terakhir logo diubah tanpa otorisasi yang tepat.</p>
+
+      <h2>Kasus Information Disclosure di AWS AKULAKU</h2>
+      <p>Pada situs <a href="https://bimg.akulaku.net/goods/" target="_blank" rel="noopener noreferrer">https://bimg.akulaku.net/goods/</a>, celah keamanan terkait information disclosure memungkinkan seseorang untuk mengakses file logo toko, ID merchant, dan tanggal terakhir logo diubah. Dalam situasi ini, hal tersebut dapat menimbulkan konsekuensi serius bagi pemilik toko dan data yang ada. Misalnya, pencuri identitas dapat menggunakan informasi tersebut untuk melakukan penipuan atau serangan phishing kepada pengguna.</p>
+
+      <h2>Solusi dan Rekomendasi</h2>
+      <ul>
+        <li>Verifikasi dan validasi: Pastikan semua permintaan untuk mengakses file sensitif, seperti logo toko, ID merchant, dan tanggal terakhir logo diubah, telah melewati verifikasi dan validasi yang tepat dengan mekanisme autentikasi dan otorisasi yang kuat.</li>
+        <li>Peninjauan kebijakan akses: Periksa kebijakan akses pada file sensitif dan pastikan hanya pengguna dengan izin yang tepat yang dapat melihat atau mengubah informasi.</li>
+        <li>Enkripsi data: Terapkan enkripsi pada data sensitif seperti ID merchant sehingga tetap terlindungi walau terjadi kebocoran.</li>
+        <li>Monitoring keamanan: Pantau dan periksa secara rutin aktivitas serta log keamanan untuk mendeteksi aktivitas mencurigakan atau percobaan akses tidak sah.</li>
+        <li>Peningkatan kesadaran keamanan: Edukasi pengembang dan tim operasional mengenai praktik terbaik perlindungan data sensitif agar kesalahan konfigurasi dapat diminimalkan.</li>
+      </ul>
+
+      <h2>Kesimpulan</h2>
+      <p>Information disclosure pada <a href="https://bimg.akulaku.net/goods/" target="_blank" rel="noopener noreferrer">https://bimg.akulaku.net/goods/</a> mengungkapkan celah keamanan yang memungkinkan akses ke file logo toko, ID merchant, dan tanggal terakhir logo diubah. Untuk mencegah dan mengatasi celah keamanan semacam ini, penting untuk menerapkan praktik keamanan yang baik, seperti verifikasi dan validasi yang tepat, kebijakan akses yang benar, enkripsi data sensitif, pemantauan keamanan yang efektif, serta peningkatan kesadaran keamanan.</p>
+
+      <p><strong>Report Status:</strong> Pending</p>
+      <p><strong>Reward:</strong> -</p>
+
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYy6xN7zEQGVX2_5lPra27UUJ4id0QTiOc3K-6oNh69MqYWBJkLsIQpWIVdAGmSYx0ol4gcT-Y390lyPbsCwWIEroPwxsr1sR8Wcol04AGYaB7Rh-mCF7VjAZ7MF79WfGrsYifNE0SDRWSYIZAPz8mQKGjG7TlFIB4FN4z3DsSTLuknJy4q-v4ERnk/s16000/IMG_20230607_014824.jpg" alt="Bukti pendukung temuan Akulaku" />
+
+      <a class="back-link" href="../index.html#pentest">? Kembali ke daftar PoC</a>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDOR/Admin No Session pada patrolisiber.id | Zildan Security</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="article-layout">
+    <header class="article-header">
+      <h1>IDOR/Admin No Session pada patrolisiber.id</h1>
+      <p class="article-byline">Zildan Security � 20 Des 2022, 20.18</p>
+      <span class="chip">BUG-BOUNTY</span>
+    </header>
+
+    <article class="article-content">
+      <p>Saya menemukan sebuah celah atau bug di website patrolisiber.id yang dimana bisa mengakibatkan kebocoran data, defacing, ransomware, dan yang paling bahaya dijadikan sumber backlink web judi.</p>
+
+      <p>Bug ini bernama Insecure Direct Object Reference (IDOR), dimana halaman dashboard tidak diberi session jadi siapa saja bisa mengakses halaman dashboard admin tanpa harus login terlebih dahulu.</p>
+
+      <p>Jika sudah masuk halaman dashboard admin, siapapun bisa merubah setting website, membuat berita, mengupload produk, bahkan upload backdoor.</p>
+      <img src="../assets/patrolisiber-ss.jpg" alt="Screenshot dashboard patrolisiber.id tanpa login" /><h2>Kategori Temuan</h2>
+      <ul>
+        <li>IDOR / Broken Access Control</li>
+        <li>Admin No Session</li>
+      </ul>
+
+      <a class="back-link" href="../index.html#pentest">? Kembali ke daftar PoC</a>
+    </article>
+  </main>
+</body>
+</html>
+
+

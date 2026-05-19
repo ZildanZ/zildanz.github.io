@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflected XSS pada wmgateway.kapalapi.co.id | Zildan Security</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="article-layout">
+    <header class="article-header">
+      <h1>Reflected XSS pada wmgateway.kapalapi.co.id</h1>
+      <p class="article-byline">Zildan Security • Jum, 12 Nov 2021, 16.11</p>
+      <span class="chip">BUG-BOUNTY</span>
+    </header>
+
+    <article class="article-content">
+      <p>Pada pengujian ini ditemukan kerentanan <strong>Reflected XSS</strong> pada endpoint berikut:</p>
+      <p><a href="https://wmgateway.kapalapi.co.id/index.php?q=payload" target="_blank" rel="noopener noreferrer">https://wmgateway.kapalapi.co.id/index.php?q=payload</a></p>
+
+      <h2>Payload Uji</h2>
+      <p>Payload pengujian yang digunakan:</p>
+      <p><code>https://wmgateway.kapalapi.co.id/index.php?q="&gt;&lt;img src=x onerror=prompt("Xss")&gt;</code></p>
+
+      <h2>Hasil</h2>
+      <p>Input pada parameter <code>q</code> dapat dipantulkan ke halaman tanpa encoding/sanitasi yang memadai sehingga JavaScript dari payload dapat dieksekusi di browser korban.</p>
+
+      <img src="../assets/kapalapi-ss.png" alt="Screenshot bukti reflected XSS pada wmgateway.kapalapi.co.id" />
+
+      <h2>Dampak</h2>
+      <p>Reflected XSS dapat digunakan untuk menjalankan script pada konteks browser user, termasuk phishing, pencurian sesi, dan manipulasi tampilan halaman jika dikombinasikan dengan social engineering.</p>
+
+      <h2>Rekomendasi</h2>
+      <ul>
+        <li>Lakukan output encoding pada seluruh data yang ditampilkan kembali ke HTML.</li>
+        <li>Terapkan validasi input ketat untuk parameter query string.</li>
+        <li>Gunakan Content Security Policy (CSP) untuk membatasi eksekusi script tidak sah.</li>
+      </ul>
+
+      <a class="back-link" href="../index.html#pentest">? Kembali ke daftar PoC</a>
+    </article>
+  </main>
+</body>
+</html>

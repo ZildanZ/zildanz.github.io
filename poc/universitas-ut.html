@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Disclosure Pada Website Universitas UT | Zildan Security</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="article-layout">
+    <header class="article-header">
+      <h1>Information Disclosure Pada Website Universitas UT</h1>
+      <p class="article-byline">Zildan Security • May 19, 2026</p>
+      <span class="chip">ASSESSMENT</span>
+    </header>
+
+    <article class="article-content">
+      <p>Assessment ini mencakup pengujian terhadap endpoint publik dan konfigurasi aplikasi yang berpotensi memaparkan informasi internal.</p>
+
+      <h2>Ringkasan Temuan</h2>
+      <p>Ditemukan paparan informasi pada response aplikasi yang seharusnya tidak tersedia untuk user publik, termasuk petunjuk teknis yang bisa dimanfaatkan untuk reconnaissance lanjutan.</p>
+
+      <h2>Step To Reproduce</h2>
+      <ol>
+        <li>Lakukan akses ke endpoint publik tanpa autentikasi.</li>
+        <li>Analisis response header, body, dan error message.</li>
+        <li>Identifikasi informasi internal yang ikut terekspos.</li>
+        <li>Validasi konsistensi paparan di beberapa endpoint.</li>
+      </ol>
+
+      <h2>Dampak</h2>
+      <p>Memudahkan attacker memahami struktur aplikasi, versi komponen, dan jalur attack surface untuk eksploitasi tahap berikutnya.</p>
+
+      <h2>Rekomendasi</h2>
+      <ul>
+        <li>Kurangi detail error message pada environment production.</li>
+        <li>Matikan header/banner yang mengungkap versi teknologi.</li>
+        <li>Terapkan secure configuration baseline dan review berkala.</li>
+      </ul>
+
+      <a class="back-link" href="../index.html#pentest">? Kembali ke daftar PoC</a>
+    </article>
+  </main>
+</body>
+</html>
